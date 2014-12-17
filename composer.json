@@ -1,0 +1,58 @@
+{
+    "name":"contao-bootstrap/navigation",
+    "description":"Bootstrap navigation components for Contao CMS",
+    "keywords":["bootstrap", "components", "contao", "navbar", "dropdown"],
+    "type":"contao-module",
+    "license":"LGPL-3.0+",
+    "authors":[
+        {
+            "name":"David Molineus",
+            "email":"mail@netzmacht.de",
+            "homepage":"http://www.netzmacht.de",
+            "role":"Project leader"
+        }
+    ],
+    "support":{
+        "email":"mail@netzmacht.de",
+        "issues":"https://github.com/contao-bootstrap/navigation/issues",
+        "wiki":"http://contao-bootstrap.netzmacht.de",
+        "source":"https://github.com/contao-bootstrap/navigation"
+    },
+    "require":{
+        "php":">=5.3.4",
+        "contao-community-alliance/composer-plugin": "~2.0",
+        "contao/core":">=3.2,<3.5-dev",
+        "contao-bootstrap/core": "~1.0",
+        "netzmacht/html": "~1.1",
+        "bit3/contao-meta-palettes":"~1.4",
+        "menatwork/contao-multicolumnwizard":"~3.2"
+    },
+    "require-dev": {
+        "netzmacht/contao-build-tools": "1.0.x-dev"
+    },
+    "conflict": {
+        "netzmacht/contao-bootstrap": "*",
+        "netzmacht/contao-form-helper": "~0.3"
+    },
+    "autoload": {
+        "psr-0": { "Netzmacht\\Bootstrap\\Components\\": "src/" }
+    },
+    "extra":{
+        "contao": {
+            "sources":{
+                "module": "system/modules/bootstrap-navigation"
+            },
+            "transifex": {
+                "project": "contao-bootstrap",
+                "prefix": "navigation-",
+                "languages_cto": "module/languages",
+                "languages_tx": ".tx"
+            }
+        },
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

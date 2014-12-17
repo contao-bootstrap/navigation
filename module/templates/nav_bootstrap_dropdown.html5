@@ -1,0 +1,39 @@
+<?php $helper = \Netzmacht\Bootstrap\Navigation\Helper::create($this, 'dropdown'); ?>
+<?php if ($helper->isChildrenList()): ?>
+<ul <?php echo $helper->getListAttributes(); ?>>
+    <?php endif; ?>
+
+    <?php foreach ($this->items as $i => $item): ?>
+        <?php $itemHelper = $helper->getItemHelper($item); ?>
+        <?php if ($itemHelper->isHeader()): ?>
+            <?php if ($i > 0): ?>
+                <li class="divider"></li><?php endif; ?>
+            <li class="dropdown-header">
+                <?php if ($itemHelper->isDropdown()): ?>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <?php echo $item['title']; ?>
+                        <?php echo $itemHelper->getDropdownToggle(); ?>
+                    </a>
+                <?php else: ?>
+                    <?php echo $item['title']; ?>
+                <?php endif; ?>
+            </li>
+            <?php echo $item['subitems']; ?>
+        <?php else: ?>
+            <li <?php if ($itemHelper->getItemClass()): ?>class="<?php echo $itemHelper->getItemClass(
+            ); ?>"<?php endif; ?>>
+                <?php if ($itemHelper->isDropdown()): ?>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <?php echo $item['link']; ?>
+                        <?php echo $itemHelper->getDropdownToggle(); ?>
+                    </a>
+                <?php else: ?>
+                    <a <?php echo $itemHelper; ?><?php echo $item['target']; ?>><?php echo $item['link']; ?></a>
+                <?php endif; ?>
+                <?php echo $item['subitems']; ?>
+            </li>
+        <?php endif; ?>
+    <?php endforeach; ?>
+    <?php if ($helper->isChildrenList()): ?>
+</ul>
+<?php endif; ?>
