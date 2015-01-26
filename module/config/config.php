@@ -8,7 +8,7 @@
  */
 
 // Frontend modules
-$GLOBALS['FE_MOD']['navigationMenu']['bootstrap_navbar'] = 'Netzmacht\Bootstrap\Navbar\Navbar';
+$GLOBALS['FE_MOD']['navigationMenu']['bootstrap_navbar'] = 'Netzmacht\Bootstrap\Navigation\NavbarModule';
 
 // Hooks
-$GLOBALS['TL_HOOKS']['isVisibleElement'][] = array('Netzmacht\Bootstrap\Navbar\Hooks', 'setRuntimeNavClass');
+$GLOBALS['TL_HOOKS']['isVisibleElement'][] = array('Netzmacht\Bootstrap\Navigation\Hooks', 'setRuntimeNavClass');
