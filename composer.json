@@ -1,6 +1,6 @@
 {
     "name":"contao-bootstrap/navigation",
-    "description":"Bootstrap navigation components for Contao CMS",
+    "description":"Bootstrap navigation component for Contao CMS",
     "keywords":["bootstrap", "components", "contao", "navbar", "dropdown"],
     "type":"contao-module",
     "license":"LGPL-3.0+",
@@ -24,18 +24,18 @@
         "contao/core":">=3.2,<3.5-dev",
         "contao-bootstrap/core": "~1.0",
         "netzmacht/html": "~1.1",
-        "bit3/contao-meta-palettes":"~1.4",
+        "contao-community-alliance/meta-palettes":"~1.4",
         "menatwork/contao-multicolumnwizard":"~3.2"
     },
     "require-dev": {
-        "netzmacht/contao-build-tools": "1.0.x-dev"
+        "netzmacht/contao-build-tools": "~1.1"
     },
     "conflict": {
         "netzmacht/contao-bootstrap": "*",
         "netzmacht/contao-form-helper": "~0.3"
     },
     "autoload": {
-        "psr-0": { "Netzmacht\\Bootstrap\\Components\\": "src/" }
+        "psr-0": { "Netzmacht\\Bootstrap\\Navigation": "src/" }
     },
     "extra":{
         "contao": {

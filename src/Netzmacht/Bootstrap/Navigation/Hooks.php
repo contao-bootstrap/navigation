@@ -1,11 +1,18 @@
 <?php
 
+/**
+ * @package   contao-bootstrap
+ * @author    David Molineus <david.molineus@netzmacht.de>
+ * @license   LGPL 3+
+ * @copyright 2013-2014 netzmacht creative David Molineus
+ */
+
 namespace Netzmacht\Bootstrap\Navigation;
 
 use Netzmacht\Bootstrap\Core\Bootstrap;
 
 /**
- * Class Hooks contains hooks which are required for the components.
+ * Class Hooks contains hooks which are required for the navigation component.
  *
  * @package Netzmacht\Bootstrap\Components\Contao
  */

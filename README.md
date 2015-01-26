@@ -1,5 +1,5 @@
-Contao-Bootstrap Navigation components
-=======================================
+Contao-Bootstrap Navigation
+===========================
 
 [![Build Status](http://img.shields.io/travis/contao-bootstrap/navigation/master.svg?style=flat-square)](https://travis-ci.org/contao-bootstrap/navigation)
 [![Version](http://img.shields.io/packagist/v/contao-bootstrap/navigation.svg?style=flat-square)](http://packagist.com/packages/contao-bootstrap/navigation)
