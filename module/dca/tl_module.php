@@ -29,8 +29,8 @@ $GLOBALS['TL_DCA']['tl_module']['metapalettes']['bootstrap_navbar'] = array
 );
 
 \MetaPalettes::appendFields('tl_module', 'navigation', 'template', array('bootstrap_navClass'));
-\MetaPalettes::appendFields('tl_module', 'customnav', 'template', array('bootstrap_navClass'));
-\MetaPalettes::appendFields('tl_module', 'quicklink', 'template', array('bootstrap_navClass'));
+//\MetaPalettes::appendFields('tl_module', 'customnav', 'template', array('bootstrap_navClass'));
+//\MetaPalettes::appendFields('tl_module', 'quicklink', 'template', array('bootstrap_navClass'));
 
 
 /**
