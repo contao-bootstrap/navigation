@@ -209,7 +209,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['bootstrap_module'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['bootstrap_module'],
 	'exclude'                 => true,
 	'inputType'               => 'select',
-	'options_callback'        => array('Netzmacht\Bootstrap\Components\Contao\DataContainer\Module', 'getAllModules'),
+	'options_callback'        => array('Netzmacht\Bootstrap\Navigation\Dca\Module', 'getAllModules'),
 	'eval'                    => array('chosen'=>true, 'tl_class' => 'w50'),
 	'sql'                     => "int(10) unsigned NOT NULL default '0'"
 );
@@ -219,7 +219,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['bootstrap_article'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['bootstrap_article'],
 	'exclude'                 => true,
 	'inputType'               => 'select',
-	'options_callback'        => array('Netzmacht\Bootstrap\Components\Contao\DataContainer\Module', 'getAllArticles'),
+	'options_callback'        => array('Netzmacht\Bootstrap\Navigation\Dca\Module', 'getAllArticles'),
 	'eval'                    => array('chosen'=>true, 'tl_class' => 'w50'),
 	'sql'                     => "int(10) unsigned NOT NULL default '0'"
 );
@@ -240,7 +240,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['bootstrap_modalTemplate'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['bootstrap_modalTemplate'],
 	'exclude'                 => true,
 	'inputType'               => 'select',
-	'options_callback'        => array('Netzmacht\Bootstrap\Core\Contao\DataContainer\Module', 'getTemplates'),
+	'options_callback'        => array('Netzmacht\Bootstrap\Navigation\Dca\Module', 'getTemplates'),
 	'reference'               => &$GLOBALS['TL_LANG']['tl_module'],
 	'eval'                    => array('templateThemeId' => 'pid', 'chosen' => true, 'tl_class' => 'w50'),
 	'sql'                     => "varchar(64) NOT NULL default ''",
@@ -299,7 +299,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['bootstrap_navbarModules'] = array
 			(
 				'label'            => $GLOBALS['TL_LANG']['tl_module']['bootstrap_navbarModules_module'],
 				'inputType'        => 'select',
-				'options_callback' => array('Netzmacht\Bootstrap\Components\Contao\DataContainer\Module', 'getAllModules'),
+				'options_callback' => array('Netzmacht\Bootstrap\Navigation\Dca\Module', 'getAllModules'),
 				'eval'             => array('style' => 'width: 300px', 'includeBlankOption' => true, 'chosen' => true),
 			),
 
@@ -329,7 +329,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['bootstrap_navbarTemplate'] = array
 	'default'                 => 'mod_navbar',
 	'exclude'                 => true,
 	'inputType'               => 'select',
-	'options_callback'        => array('Netzmacht\Bootstrap\Core\Contao\DataContainer\Module', 'getTemplates'),
+	'options_callback'        => array('Netzmacht\Bootstrap\Navigation\Dca\Module', 'getTemplates'),
 	'reference'               => &$GLOBALS['TL_LANG']['tl_module'],
 	'eval'                    => array('templatePrefix' => 'mod_navbar', 'templateThemeId' => 'pid'),
 	'sql'                     => "varchar(32) NOT NULL default ''",
@@ -342,7 +342,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['bootstrap_navbarBrandTemplate'] = arr
 	'exclude'                 => true,
 	'inputType'               => 'select',
 	'reference'               => &$GLOBALS['TL_LANG']['tl_module'],
-	'options_callback'        => array('Netzmacht\Bootstrap\Core\Contao\DataContainer\Module', 'getTemplates'),
+	'options_callback'        => array('Netzmacht\Bootstrap\Navigation\Dca\Module', 'getTemplates'),
 	'eval'                    => array('templatePrefix' => 'navbar_brand', 'templateThemeId' => 'pid', 'chosen' => true, 'tl_class' => 'clr'),
 	'sql'                     => "varchar(64) NOT NULL default ''",
 );
