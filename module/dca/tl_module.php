@@ -98,7 +98,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['bootstrap_buttons'] = array
 				'inputType'               => 'select',
 				'options'                 => array('link', 'group', 'dropdown', 'child', 'header'),
 				'reference'               => &$GLOBALS['TL_LANG']['tl_content']['bootstrap_buttons_types'],
-				'eval'                    => array('style' => 'width: 90px;', 'valign' => 'top'),
+				'eval'                    => array('style' => 'width: 90px;', 'valign' => 'top', 'chosen' => true),
 			),
 
 			'label' => array
