@@ -50,31 +50,7 @@ class NavbarModule extends \Module
     {
         $config  = deserialize($this->bootstrap_navbarModules, true);
         $modules = array();
-        $ids     = array();
-
-        // get ids
-        foreach ($config as $index => $module) {
-            if ($module['inactive']) {
-                continue;
-            }
-            $ids[$index] = intval($module['module']);
-        }
-
-        $models = array();
-
-        if ($ids) {
-            // prefetch modules, so only 1 query is required
-            $ids        = implode(',', $ids);
-            $collection = \ModuleModel::findBy(array('tl_module.id IN(' . $ids . ')'), array());
-
-            if ($collection) {
-                while ($collection->next()) {
-                    $model                     = $collection->current();
-                    $model->bootstrap_inNavbar = true;
-                    $models[$model->id]        = $model;
-                }
-            }
-        }
+        $models  = $this->prefetchModules($config);
 
         foreach ($config as $module) {
             $id = $module['module'];
@@ -136,5 +112,55 @@ class NavbarModule extends \Module
             'id'     => $module['module'],
             'class'  => $class,
         );
+    }
+
+    /**
+     * Extract module ids from navbar config.
+     *
+     * @param array $config The navbar config.
+     *
+     * @return array
+     */
+    protected function extractModuleIds($config)
+    {
+        $ids = array();
+
+        foreach ($config as $index => $module) {
+            if ($module['inactive']) {
+                continue;
+            }
+            $ids[$index] = intval($module['module']);
+        }
+
+        return $ids;
+    }
+
+    /**
+     * Prefetch modules.
+     *
+     * @param array $config Navbar config.
+     *
+     * @return array
+     */
+    protected function prefetchModules($config)
+    {
+        $ids    = $this->extractModuleIds($config);
+        $models = array();
+
+        if ($ids) {
+            // prefetch modules, so only 1 query is required
+            $ids        = implode(',', $ids);
+            $collection = \ModuleModel::findBy(array('tl_module.id IN(' . $ids . ')'), array());
+
+            if ($collection) {
+                while ($collection->next()) {
+                    $model                     = $collection->current();
+                    $model->bootstrap_inNavbar = true;
+                    $models[$model->id]        = $model;
+                }
+            }
+        }
+
+        return $models;
     }
 }
