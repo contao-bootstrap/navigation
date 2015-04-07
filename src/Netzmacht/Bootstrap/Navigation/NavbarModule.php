@@ -54,26 +54,32 @@ class NavbarModule extends \Module
 
         // get ids
         foreach ($config as $index => $module) {
+            if ($module['inactive']) {
+                continue;
+            }
             $ids[$index] = intval($module['module']);
         }
 
-        // prefetch modules, so only 1 query is required
-        $ids        = implode(',', $ids);
-        $collection = \ModuleModel::findBy(array('tl_module.id IN(' . $ids . ')'), array());
-        $models     = array();
+        $models = array();
 
-        if ($collection) {
-            while ($collection->next()) {
-                $model                     = $collection->current();
-                $model->bootstrap_inNavbar = true;
-                $models[$model->id]        = $model;
+        if ($ids) {
+            // prefetch modules, so only 1 query is required
+            $ids        = implode(',', $ids);
+            $collection = \ModuleModel::findBy(array('tl_module.id IN(' . $ids . ')'), array());
+
+            if ($collection) {
+                while ($collection->next()) {
+                    $model                     = $collection->current();
+                    $model->bootstrap_inNavbar = true;
+                    $models[$model->id]        = $model;
+                }
             }
         }
 
         foreach ($config as $module) {
             $id = $module['module'];
 
-            if ($id != '' && array_key_exists($id, $models)) {
+            if ($id != '' && !$module['inactive'] && array_key_exists($id, $models)) {
                 $modules[] = $this->generateModule($module, $models[$id]);
             }
         }

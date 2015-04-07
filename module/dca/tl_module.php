@@ -79,7 +79,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['bootstrap_navbarModules'] = array
                 'label'            => $GLOBALS['TL_LANG']['tl_module']['bootstrap_navbarModules_module'],
                 'inputType'        => 'select',
                 'options_callback' => array('Netzmacht\Bootstrap\Core\Contao\DataContainer\Module', 'getAllModules'),
-                'eval'             => array('style' => 'width: 300px', 'includeBlankOption' => true, 'chosen' => true),
+                'eval'             => array('style' => 'width: 250px', 'includeBlankOption' => true, 'chosen' => true),
             ),
 
             'floating' => array
@@ -95,7 +95,14 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['bootstrap_navbarModules'] = array
             (
                 'label'     => $GLOBALS['TL_LANG']['tl_module']['bootstrap_navbarModules_cssClass'],
                 'inputType' => 'text',
-                'eval'      => array('style' => 'width: 200px', 'rgxp' => 'txt'),
+                'eval'      => array('style' => 'width: 180px', 'rgxp' => 'txt'),
+            ),
+
+            'inactive' => array
+            (
+                'label'     => &$GLOBALS['TL_LANG']['tl_module']['bootstrap_navbarModules_inactive'],
+                'inputType' => 'checkbox',
+                'eval'      => array('style' => 'width: 80px'),
             ),
         )
     ),

@@ -18,3 +18,5 @@ $GLOBALS['TL_LANG']['tl_module']['bootstrap_navClass'][0]               = 'Boots
 $GLOBALS['TL_LANG']['tl_module']['bootstrap_navClass'][1]               = 'Please set the Bootstrap related navigation classes. You have to assign the common <em>nav</em> class too.';
 $GLOBALS['TL_LANG']['tl_module']['bootstrap_navbarBrandTemplate'][0]    = 'Template of header title';
 $GLOBALS['TL_LANG']['tl_module']['bootstrap_navbarBrandTemplate'][1]    = 'Which template has to be used for the header title.';
+$GLOBALS['TL_LANG']['tl_module']['bootstrap_navbarModules_inactive'][0] = 'Inactive';
+$GLOBALS['TL_LANG']['tl_module']['bootstrap_navbarModules_inactive'][1] = 'Deactivate module temporary.';
